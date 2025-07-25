@@ -9,8 +9,9 @@
 
 body {
     background-color: black;
-    color: rgb(255, 255, 255);
+    color: white;
     transition: background-color 0.5s, color 0.5s;
+    overflow-x: hidden;
 }
 
 .header {
@@ -18,17 +19,16 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10%;
+    padding: 15px 5%;
     background: linear-gradient(45deg, rgba(0, 0, 0, 0.548), green, rgba(0, 0, 0, 0.548));
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    transition: background 0.5s;
 }
 
 .logo {
-    font-size: 25px;
+    font-size: 1.5rem;
     color: green;
     text-shadow: 5px 5px 10px black;
     text-decoration: none;
@@ -36,19 +36,17 @@ body {
     pointer-events: none;
     opacity: 0;
     animation: slideTop 1s ease forwards;
-    transition: color 0.5s, text-shadow 0.5s;
 }
 
 .navbar a {
-    display: inline-block;
-    font-size: 18px;
+    font-size: 1rem;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 35px;
+    margin-left: 1.5rem;
     opacity: 0;
-    animation: slideTop .5s ease forwards;
-    animation-delay: calc(.2s * var(--i));
+    animation: slideTop 0.5s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
     position: relative;
 }
 
@@ -57,71 +55,61 @@ body {
     width: 0;
     height: 2px;
     background: black;
-    border-radius: 50%;
     position: absolute;
     left: 0;
     bottom: -3px;
     transition: 0.6s;
 }
 
-
-    .navbar a.active,
-    .navbar a:hover {
-      color: var(--primary-color);
-    }
+.navbar a.active,
+.navbar a:hover {
+    color: var(--primary-color);
+}
 
 .navbar a:hover::after {
     width: 100%;
 }
 
 .home {
-    width: 100%;
-    height: 100vh;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column-reverse;
+    justify-content: center;
     align-items: center;
-    padding: 70px 10% 0;
+    padding: 100px 5% 40px;
+    min-height: 100vh;
+    gap: 2rem;
 }
 
 .home-content {
-    max-width: 600px;
-    padding: 50px;
-}
-
-.home-content h1, .home-content h3 {
-    text-shadow: 5px 4px 10px green;
-    transition: text-shadow 0.5s;
+    max-width: 700px;
+    text-align: center;
+    animation: slideRight 1s ease forwards;
 }
 
 .home-content h1 {
-    font-size: 56px;
+    font-size: 2.5rem;
     font-weight: 700;
-    line-height: 1.2;
-    opacity: 0;
-    animation: slideRight 1s ease forwards;
-    animation-delay: .7s;
+    text-shadow: 5px 4px 10px green;
 }
 
 .home-content h3 {
-    font-size: 32px;
+    font-size: 1.5rem;
     font-weight: 700;
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: 1s;
+    text-shadow: 5px 4px 10px green;
+    margin-top: 10px;
 }
 
 .home-content h3 span {
-    color: rgb(0, 255, 0);
-    transition: color 0.5s;
+    color: lime;
 }
 
 .home-content p {
-    font-size: 20px;
-    margin: 20px 0 0;
-    text-align: left;
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: 1.3s;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.home-sci {
+    margin-top: 30px;
 }
 
 .home-sci a {
@@ -130,17 +118,12 @@ body {
     align-items: center;
     width: 40px;
     height: 40px;
-    background: black;
     border: 2px solid green;
     border-radius: 50%;
-    font-size: 20px;
+    font-size: 1.2rem;
     color: green;
-    text-decoration: none;
-    margin: 30px 15px 30px 0;
-    opacity: 0;
-    animation: zoomIn 1s ease forwards;
-    animation-delay: 0.4s;
-    transition: background 0.5s, color 0.5s, border-color 0.5s, box-shadow 0.5s;
+    margin: 0 10px;
+    transition: 0.4s;
 }
 
 .home-sci a:hover {
@@ -154,21 +137,43 @@ body {
     padding: 12px 28px;
     background: green;
     border-radius: 40px;
-    font-size: 16px;
+    font-size: 1rem;
     color: black;
-    letter-spacing: 1px;
     text-decoration: none;
     font-weight: 600;
-    opacity: 0;
-    animation: zoomIn 1s ease forwards;
-    animation-delay: 0.4s;
-    transition: background 0.5s, box-shadow 0.5s, color 0.5s;
+    margin-top: 20px;
+    transition: all 0.4s ease;
 }
 
 .btn-box:hover {
     box-shadow: 0 0 5px green,
     0 0 25px green, 0 0 50px green,
-    0 0 100px green, 0 0 200px green;
+    0 0 100px green;
+}
+
+.home-img {
+    width: 280px;
+    height: 280px;
+    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+}
+
+.home-img .glowing-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.home-img .glowing-circle::after {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background-color: black;
+    border-radius: 50%;
 }
 
 .glowing-circle span {
@@ -178,29 +183,75 @@ body {
     background: linear-gradient(black, rgba(0, 128, 0, 0.411));
     border-radius: 50%;
     animation: circleRotate 5s linear infinite;
-    transition: background 0.5s;
 }
 
-/* ===== RED THEME STYLES ===== */
+.glowing-circle .image {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: linear-gradient(45deg, rgba(0, 255, 0, 0.4), rgba(0, 255, 0, 0.8));
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.3);
+    z-index: 1;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .home {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 100px 10%;
+    }
+
+    .home-content {
+        text-align: left;
+    }
+
+    .home-img {
+        width: 410px;
+        height: 410px;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    .navbar a {
+        font-size: 1.1rem;
+    }
+
+    .home-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .home-content h3 {
+        font-size: 2rem;
+    }
+
+    .home-content p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Red Theme */
 body.red-theme {
     background-color: #1a0000;
     color: #ffcccc;
     background-image: url('/IMAGES/red.jpg');
-     background-size: cover;
+    background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    
-    color: #ffcccc;
-}
-
-.red-theme #matrixCanvas {
-  display: none;
 }
 
 .red-theme .header {
     background: linear-gradient(45deg, rgba(0, 0, 0, 0.548), darkred, rgba(0, 0, 0, 0.548));
-    
 }
 
 .red-theme .logo {
@@ -234,66 +285,14 @@ body.red-theme {
 }
 
 .red-theme .btn-box:hover {
-    box-shadow: 0 0 5px red, 0 0 25px red, 0 0 50px red, 0 0 100px red, 0 0 200px red;
+    box-shadow: 0 0 5px red, 0 0 25px red, 0 0 50px red, 0 0 100px red;
 }
 
 .red-theme .glowing-circle span {
     background: linear-gradient(black, rgba(139, 0, 0, 0.411));
 }
 
-/* Other sections and animations remain the same */
-.home-img {
-    width: 410px;
-    height: 410px;
-    opacity: 0;
-    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
-    animation-delay: 2.1s, 3.1s;
-}
-
-.home-img .glowing-circle {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.home-img .glowing-circle::after {
-    content: '';
-    position: absolute;
-    width: 380px;
-    height: 380px;
-    background-color: black;
-    border-radius: 50%;
-}
-
-.glowing-circle span:nth-child(1) {
-    filter: blur(10px);
-}
-
-.glowing-circle .image {
-  background: linear-gradient(45deg, rgba(0, 255, 0, 0.4), rgba(0, 255, 0, 0.8));
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.3);
-    position: relative;
-    width: 380px;
-    height: 380px;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-.image img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-}
-
+/* Canvas Matrix */
 canvas {
     position: fixed;
     top: 0;
@@ -301,68 +300,37 @@ canvas {
     z-index: -1;
 }
 
-/* ==== ANIMATIONS ==== */
+.red-theme #matrixCanvas {
+    display: none;
+}
+
+/* Animations */
 @keyframes slideTop {
-    0% {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    0% { opacity: 0; transform: translateY(100px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideRight {
-    0% {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    0% { opacity: 0; transform: translateX(-100px); }
+    100% { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes slideLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    0% { opacity: 0; transform: translateX(100px); }
+    100% { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes zoomIn {
-    0% {
-        opacity: 0;
-        transform: scale(0);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+    0% { opacity: 0; transform: scale(0); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
 @keyframes floatImage {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-24px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-24px); }
 }
 
 @keyframes circleRotate {
-    0% {
-        transform: rotate(0);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
 }
