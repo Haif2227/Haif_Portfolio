@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | HAIF</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary-color: #39ff14;
+      --dark-bg: #0e0e0e;
+      --light-bg: #111;
+      --text-color: #fff;
+    }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000;
+  background-image: url('IMAGES/hack.jpg'); /* replace with your image */
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.3); /* adjust darkness here */
+  z-index: -1;
+}
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: v linear-gradient(45deg, rgba(0, 0, 0, 0.548), green, rgba(0, 0, 0, 0.548));;
+      flex-wrap: wrap;
+      border-bottom: 2px solid var(--primary-color);
+    }
+
+    .logo {
+      font-size: 24px;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar a {
+      display: inline-block;
+      margin-left: 20px;
+      font-size: 18px;
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+      margin-left: 35px;
+    }
+
+    .navbar a.active,
+    .navbar a:hover {
+      color: var(--primary-color);
+    }
+
+    .section {
+      padding: 60px 20px;
+    }
+
+    .heading {
+      text-align: center;
+      font-size: 2.8rem;
+      color: var(--primary-color);
+      margin-bottom: 40px;
+    }
+
+    .filter-buttons {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .filter-buttons button {
+      background: none;
+      border: 1px solid var(--primary-color);
+      color: var(--primary-color);
+      padding: 8px 18px;
+      margin: 0 10px 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-buttons button.active,
+    .filter-buttons button:hover {
+      background-color: var(--primary-color);
+      color: #000;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .project-card {
+      background: rgba(30, 30, 30, 0.6);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0, 255, 170, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 255, 170, 0.5);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .project-info h3 {
+      color: #39ff14;
+      margin-bottom: 10px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .project-card img {
+        height: 160px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .heading {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">MOHAMMED HAIF</a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="project.html" class="active">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="projects section">
+    <h2 class="heading">My <span>Projects</span></h2>
+
+    <div class="filter-buttons">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="python">Python</button>
+      <button data-filter="cyber">Cybersecurity</button>
+      <button data-filter="automation">Automation</button>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card python cyber" onclick="window.open('https://github.com/Haif2227/Packet_Sniffer')">
+        <img src="IMAGES\sniffer.jpg" alt="Packet Sniffer" />
+        <div class="project-info">
+          <h3>Packet Sniffer</h3>
+        </div>
+      </div>
+
+      <div class="project-card cyber" onclick="window.open('https://github.com/Haif2227/Packet_Analyzer')">
+        <img src="IMAGES/packet analysis.jpg" alt="Packet Analyzer" />
+        <div class="project-info">
+          <h3>Packet Analyzer</h3>
+        </div>
+      </div>
+
+      <div class="project-card cyber" onclick="window.open('https://github.com/Haif2227/Password_Strength_Checker')">
+        <img src="IMAGES/pass.jpeg" alt="Password Strength Checker" />
+        <div class="project-info">
+          <h3>Password Strength Checker</h3>
+        </div>
+      </div>
+
+      <div class="project-card python cyber automation" onclick="window.open('https://github.com/Haif2227/Audit_Forge')">
+        <img src="IMAGES/audit.png" alt="Audit Forge" />
+        <div class="project-info">
+          <h3>Audit Forge</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const filterButtons = document.querySelectorAll('.filter-buttons button');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelector('.filter-buttons .active').classList.remove('active');
+        btn.classList.add('active');
+
+        const category = btn.dataset.filter;
+
+        projectCards.forEach(card => {
+          if (category === 'all') {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.toggle('hidden', !card.classList.contains(category));
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

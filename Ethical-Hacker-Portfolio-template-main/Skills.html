@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills | HAIF</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+  <style>
+    /* Background */
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000;
+  background-image: url('IMAGES/hack.jpg'); 
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.3); /* adjust darkness here */
+  z-index: -1;
+}
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(45deg, rgba(0, 0, 0, 0.548), green, rgba(0, 0, 0, 0.548));;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid #39ff14;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #39ff14;
+      text-decoration: none;
+    }
+
+    .navbar a {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+    position: relative;
+}
+
+.navbar a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    transition: 0.6s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+
+    /* Section */
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .heading {
+      font-size: 2.8rem;
+      color: #39ff14;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .skill-box {
+      background: rgba(30, 30, 30, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(57, 255, 20, 0.2);
+      border-radius: 15px;
+      padding: 25px;
+      width: 280px;
+      box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+      color: #e0e0e0;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .skill-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
+    }
+
+    .skill-box h3 {
+      color: #39ff14;
+      margin-bottom: 10px;
+    }
+
+    .certification-section {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .certification-section h2 {
+      font-size: 2.2rem;
+      color: #39ff14;
+      margin-bottom: 30px;
+    }
+
+    .certification-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .badge {
+      padding: 15px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      background: rgba(40, 40, 40, 0.6);
+      border: 1px solid #39ff14;
+      color: #39ff14;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+    }
+
+    .badge:hover {
+      background: #111;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(57, 255, 20, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      .skills-container, .certification-badges {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">MOHAMMED HAIF</a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html" class="active">Skills</a>
+      <a href="project.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="skills section">
+    <h2 class="heading">My <span>Skills</span></h2>
+    <div class="skills-container">
+      <div class="skill-box">
+        <h3>Cybersecurity</h3>
+        <p>Ethical Hacking, Penetration Testing, Vulnerability Scanning, Incident Response</p>
+      </div>
+      <div class="skill-box">
+        <h3>Tools & Platforms</h3>
+        <p>SIEM, EDR, SOAR, IDS/IPS, SOC tools</p>
+      </div>
+      <div class="skill-box">
+        <h3>Languages</h3>
+        <p>Python, Bash, HTML, CSS </p>
+      </div>
+      <div class="skill-box">
+        <h3>Soft Skills</h3>
+        <p>Problem Solving, Communication, Critical Thinking, Adaptability</p>
+      </div>
+      <div class="skill-box">
+        <h3>Web Security</h3>
+        <p>OWASP Top 10, Input Validation, Secure Authentication, XSS, CSRF</p>
+      </div>
+      <div class="skill-box">
+        <h3>Cloud & Virtualization</h3>
+        <p>AWS, Docker, VirtualBox, Cloud Security Practices</p>
+      </div>
+    </div>
+
+    <div class="certification-section">
+      <h2>Certifications</h2>
+      <div class="certification-badges">
+        <a class="badge" href="https://drive.google.com/file/d/1Q4R0zNuAG9rIHTBSuWV86Hs_EfRalyDI/view?usp=sharing " target="_blank">Certified Ethical Hacker (CEH)-Ec-Council</a>
+        <a class="badge" href="https://drive.google.com/file/d/17-iCTdcocVldEL2NS2jcGNzQfFaJKzk4/view?usp=sharing " target="_blank">Cybersecurity Master Program - Simplilearn</a>
+        <a class="badge" href="https://drive.google.com/file/d/1DGdmjEVgIJfk73NzaVE1CfPFCAJT2Ugu/view?usp=sharing " target="_blank">CEH Attendence certificate-Ec-Council</a>
+        <a class="badge" href="https://drive.google.com/file/d/15yDrf9nE6nuGZp-x2Jl3R-KQjCOvOL5Y/view?usp=sharing " target="_blank">Cybersecurity training and internship - Corizo</a>
+        <a class="badge" href="https://drive.google.com/file/d/1uKGtNtOY693qqqC01Eq8Mj-i58A0wa9H/view?usp=sharing " target="_blank">Linux Programming course - Simplilearn</a>
+        <a class="badge" href="https://drive.google.com/file/d/1wQEZqD37aNDDjhkRLKVCVs6muczUth4T/view?usp=sharing " target="_blank">Development of Audit script for Windows 11 and Linux OS</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Scroll animation for fade-in effect
+    const skillBoxes = document.querySelectorAll('.skill-box');
+    const revealSkills = () => {
+      const triggerBottom = window.innerHeight * 0.9;
+      skillBoxes.forEach(box => {
+        const boxTop = box.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          box.style.opacity = '1';
+          box.style.transform = 'translateY(0)';
+        }
+      });
+    };
+    window.addEventListener('scroll', revealSkills);
+    window.addEventListener('load', revealSkills);
+  </script>
+</body>
+</html>

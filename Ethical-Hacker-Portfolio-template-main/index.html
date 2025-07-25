@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | HAIF</title>
+
+  <link rel="icon" type="image/png" href="Ethical-Hacker-Portfolio-template-main/IMAGES/sailogo.png" />
+  <link rel="stylesheet" href="CSS/style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+</head>
+<body>
+
+  <canvas id="matrixCanvas"></canvas>
+  <script src="JAVASCRIPT/matrix.js"></script>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="#" class="logo">MOHAMMED HAIF</a>
+
+    <nav class="navbar">
+      <a href="#home" style="--i:1;" class="active">Home</a>
+      <a href="About.html" style="--i:2;">About</a>
+      <a href="Skills.html" style="--i:3;">Skills</a>
+      <a href="project.html" style="--i:4;">Projects</a>
+      <a href="contact.html" style="--i:5;">Contact</a>
+    </nav>
+
+    <!-- <button id="theme-toggle" class="btn-box" style="margin-left: 20px;">Switch</button>-->
+  </header>
+
+  <section id="home" class="home">
+    <div class="home-content">
+      <h3 class="mu">Hello, It's me</h3>
+      <h1>Mohammed Haif</h1>
+      <h3>And I'm a <span class="pro-text"></span></h3>
+
+      <p id="home-para">
+        Cybersecurity professional with an MCA and a <strong>Master's in Cybersecurity</strong>, certified as a <strong>CEH</strong>
+Skilled in ethical hacking, network security, and SOC operations like threat monitoring and incident response.
+Passionate about protecting systems and contributing to a safer digital world.
+      </p>
+
+      <div class="home-sci">
+        <a href="https://github.com/Haif2227" target="_blank"><i class='bx bxl-github'></i></a>
+        <a href="https://www.linkedin.com/in/mohammed-haif-t-j-4b81a6235" target="_blank"><i class='bx bxl-linkedin'></i></a>
+      </div>
+
+      <a href="MOHAMMED HAIF T J.pdf" class="btn-box" download="Mohammed-Haif-CV.pdf">Download CV</a>
+    </div>
+
+    <div class="home-img">
+      <div class="glowing-circle">
+        <span></span>
+        <span></span>
+        <div class="image">
+          <img src="IMAGES/HAIF.jpeg" alt="Profile" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Typed.js text animation -->
+  <script>
+    var typed = new Typed(".pro-text", {
+      strings: ["Ethical Hacker", "Security Analyst", "Security Engineer"],
+      typeSpeed: 100,
+      backSpeed: 100,
+      backDelay: 1000,
+      loop: true
+    });
+  </script>
+
+  <!-- Theme Toggle Logic -
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+    const para = document.getElementById('home-para');
+
+    let isRedTheme = false;
+
+    toggleBtn.addEventListener('click', () => {
+      isRedTheme = !isRedTheme;
+      body.classList.toggle('red-theme', isRedTheme);
+
+      if (isRedTheme) {
+        para.innerHTML = `   Welcome to my alternate cyber-themed red interface. <br><br>
+              This version emphasizes alertness and urgency in cybersecurity. <br><br>
+              Explore my journey in ethical hacking and red teaming simulation environments.`;
+        toggleBtn.innerText = "Switch";
+      } else {
+        para.innerHTML = `   This portfolio highlights my passion for cybersecurity and my commitment to ethical practices. <br><br>
+              I have acquired fundamental knowledge and skills in various areas of ethical hacking,
+           allowing me to contribute to the security of organizations and individuals. <br><br>
+              Hacked multiple Wifi network that were based on WPS protocol.`;
+        toggleBtn.innerText = "Switch";
+      }
+    });
+  </script> -->
+</body>
+</html>
